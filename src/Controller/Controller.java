@@ -66,6 +66,8 @@ public class Controller {
 		if(mouseY> 300 && mouseY> 400) {selected=3;}
 		if(mouseY> 400 && mouseY> 500) {selected=4;}
 		if(mouseY> 500 && mouseY> 600) {selected=5;}
+		
+		
 	//movimientos del primero en la lista
 		if(selected == 1){
 		if(mouseY>200&&mouseY<300) {

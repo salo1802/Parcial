@@ -2,6 +2,7 @@ package Model;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
+import processing.core.PImage;
 
 public class Peluditos implements Comparable<Peluditos>{
 
@@ -12,14 +13,16 @@ public class Peluditos implements Comparable<Peluditos>{
 	public String fechaNA;
 	public int edad;
 	public int y;
+	PImage foto;
 	
-	public Peluditos(int id, String nombre, String raza, String fechaNA, int edad) {
+	public Peluditos(int id, String nombre, String raza, String fechaNA, int edad,PApplet app) {
 		this.id = id;
 		nroLista = id;
 		this.nombre = nombre;
 		this.raza = raza;
 		this.fechaNA =  fechaNA;
 		this.edad = edad;
+		foto = app.loadImage("/imports/"+id+".png");
 	}
 	
 	public void pintarPeludito(PApplet app) {
@@ -47,6 +50,7 @@ public class Peluditos implements Comparable<Peluditos>{
 	app.fill(255,182,174);
 	
 	app.circle(50, y-10, 100);
+	app.image(foto, 50, y);
 	
 	}
 	

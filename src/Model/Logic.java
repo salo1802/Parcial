@@ -113,7 +113,7 @@ public class Logic {
 			if(dia<=app.day()) {
 			edad =	app.year()-año;
 			}} else { edad = app.year()-(año+1);}
-		actual = new Peluditos(id, nombre, raza, fecha,edad);
+		actual = new Peluditos(id, nombre, raza, fecha,edad,app);
 		peluditos.add(actual);
 		}	
 		
