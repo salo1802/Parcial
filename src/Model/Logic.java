@@ -38,7 +38,7 @@ public class Logic {
 		app.text("Fecha de Nacimiento", 960, 60);
 		app.text("Edad",1150 , 60);
 		app.fill(0);
-		app.text("nota: use los botones de arriba para ordenar por atributo ", 600, 650);
+		app.text("nota: use los botones de arriba para ordenar por atributo o arrastre a el peludito a la posición que desee.", 600, 650);
 		app.textSize(40);
 		app.stroke(255);
 		app.line(105, 0, 105, 100);

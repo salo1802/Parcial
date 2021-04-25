@@ -22,7 +22,7 @@ public class Controller {
 		logica.draw(app);
 		app.noStroke();
 		app.fill(94,33,41,60);
-		logica.OrdenarAtributo(button);
+		if (ordenboton ==true) {logica.OrdenarAtributo(button);}
 		switch (button) {
 		case 0:
 		app.rect(150,40 , 75, 90);
@@ -46,8 +46,9 @@ public class Controller {
 	
 	public void Buttons(int mousex, int mousey) {
 		logica.ordenarPorlista();
-		ordenboton= true;
+		
 		if (mousey > 0 && mousey < 100) {
+			ordenboton= true;
 			if(mousex>100 && mousex<190) {button = 0;}
 			if(mousex>190 && mousex<440) {button = 1;}
 			if(mousex>440 && mousex<820) {button = 2;}
@@ -60,78 +61,92 @@ public class Controller {
 	}
 	
 	public void Dragged(int mouseY) {
+		logica.ordenarPorlista();
 		ordenboton = false;
 		if(mouseY> 100 && mouseY> 200) {selected=1;}
 		if(mouseY> 200 && mouseY> 300) {selected=2;}
 		if(mouseY> 300 && mouseY> 400) {selected=3;}
 		if(mouseY> 400 && mouseY> 500) {selected=4;}
-		if(mouseY> 500 && mouseY> 600) {selected=5;}
+		if(mouseY> 500 && mouseY> 600) {selected=5;}}
 		
-		
+	
+	public void Released(int mouseY) {
 	//movimientos del primero en la lista
 		if(selected == 1){
 		if(mouseY>200&&mouseY<300) {
 		logica.peluditos.get(1).setNroLista(1);
-		logica.peluditos.get(0).setNroLista(2);}
+		logica.peluditos.get(0).setNroLista(2);
+		selected=0;}
 		if(mouseY>300&&mouseY<400) {
 		logica.peluditos.get(1).setNroLista(1);
 		logica.peluditos.get(2).setNroLista(2);
 		logica.peluditos.get(0).setNroLista(3);
 		logica.peluditos.get(3).setNroLista(4);
-		logica.peluditos.get(4).setNroLista(5);}
+		logica.peluditos.get(4).setNroLista(5);
+		selected=0;}
 		if(mouseY>400&&mouseY<500) {
 		logica.peluditos.get(1).setNroLista(1);
 		logica.peluditos.get(2).setNroLista(2);
 		logica.peluditos.get(3).setNroLista(3);
 		logica.peluditos.get(0).setNroLista(4);
-		logica.peluditos.get(4).setNroLista(5);}
+		logica.peluditos.get(4).setNroLista(5);
+		selected=0;}
 		if(mouseY>500) {
 		logica.peluditos.get(1).setNroLista(1);
 		logica.peluditos.get(2).setNroLista(2);
 		logica.peluditos.get(3).setNroLista(3);
 		logica.peluditos.get(4).setNroLista(4);
-		logica.peluditos.get(0).setNroLista(5);}}
+		logica.peluditos.get(0).setNroLista(5);}
+		selected=0;}
 		
 		if(selected == 2){
 			if(mouseY>100&&mouseY<200) {
 			logica.peluditos.get(0).setNroLista(2);
-			logica.peluditos.get(1).setNroLista(1);}
+			logica.peluditos.get(1).setNroLista(1);
+			selected=0;}
 			if(mouseY>300&&mouseY<400) {
 			logica.peluditos.get(1).setNroLista(3);
 			logica.peluditos.get(2).setNroLista(2);
-			logica.peluditos.get(0).setNroLista(1);}
+			logica.peluditos.get(0).setNroLista(1);
+			selected=0;}
 			if(mouseY>400&&mouseY<500) {
 			logica.peluditos.get(1).setNroLista(4);
 			logica.peluditos.get(2).setNroLista(2);
 			logica.peluditos.get(3).setNroLista(3);
-			logica.peluditos.get(0).setNroLista(1);}
+			logica.peluditos.get(0).setNroLista(1);
+			selected=0;}
 			if(mouseY>500) {
 			logica.peluditos.get(2).setNroLista(2);
 			logica.peluditos.get(3).setNroLista(3);
 			logica.peluditos.get(4).setNroLista(4);
 			logica.peluditos.get(1).setNroLista(5);
-			logica.peluditos.get(0).setNroLista(1);}}
+			logica.peluditos.get(0).setNroLista(1);
+			selected=0;}}
 		
 		if(selected == 3){
 			if(mouseY>100&&mouseY<200) {
 			logica.peluditos.get(2).setNroLista(1);
 			logica.peluditos.get(0).setNroLista(2);
-			logica.peluditos.get(1).setNroLista(3);}
+			logica.peluditos.get(1).setNroLista(3);
+			selected=0;}
 			if(mouseY>200&&mouseY<300) {
 			logica.peluditos.get(1).setNroLista(3);
 			logica.peluditos.get(2).setNroLista(2);
-			logica.peluditos.get(0).setNroLista(1);}
+			logica.peluditos.get(0).setNroLista(1);
+			selected=0;}
 			if(mouseY>400&&mouseY<500) {
 			logica.peluditos.get(2).setNroLista(4);
 			logica.peluditos.get(1).setNroLista(2);
 			logica.peluditos.get(3).setNroLista(3);
-			logica.peluditos.get(0).setNroLista(1);}
+			logica.peluditos.get(0).setNroLista(1);
+			selected=0;}
 			if(mouseY>500) {
 			logica.peluditos.get(2).setNroLista(5);
 			logica.peluditos.get(3).setNroLista(3);
 			logica.peluditos.get(4).setNroLista(4);
 			logica.peluditos.get(1).setNroLista(2);
-			logica.peluditos.get(0).setNroLista(1);}}
+			logica.peluditos.get(0).setNroLista(1);
+			selected=0;}}
 		
 	
 		if(selected == 4){
@@ -139,22 +154,26 @@ public class Controller {
 			logica.peluditos.get(3).setNroLista(1);
 			logica.peluditos.get(0).setNroLista(2);
 			logica.peluditos.get(1).setNroLista(3);
-			logica.peluditos.get(2).setNroLista(4);}
+			logica.peluditos.get(2).setNroLista(4);
+			selected=0;}
 			if(mouseY>200&&mouseY<300) {
 			logica.peluditos.get(0).setNroLista(1);
 			logica.peluditos.get(1).setNroLista(3);
-			logica.peluditos.get(3).setNroLista(2);}
+			logica.peluditos.get(3).setNroLista(2);
+			selected=0;}
 			if(mouseY>300&&mouseY<400) {
 			logica.peluditos.get(0).setNroLista(1);
 			logica.peluditos.get(1).setNroLista(2);
 			logica.peluditos.get(2).setNroLista(4);
-			logica.peluditos.get(3).setNroLista(3);}
+			logica.peluditos.get(3).setNroLista(3);
+			selected=0;}
 			if(mouseY>500) {
 			logica.peluditos.get(0).setNroLista(1);
 			logica.peluditos.get(1).setNroLista(2);
 			logica.peluditos.get(2).setNroLista(3);
 			logica.peluditos.get(3).setNroLista(5);
-			logica.peluditos.get(4).setNroLista(4);}}
+			logica.peluditos.get(4).setNroLista(4);
+			selected=0;}}
 	
 		
 		if(selected == 5){
@@ -163,26 +182,32 @@ public class Controller {
 			logica.peluditos.get(0).setNroLista(2);
 			logica.peluditos.get(1).setNroLista(3);
 			logica.peluditos.get(2).setNroLista(4);
-			logica.peluditos.get(3).setNroLista(5);}
+			logica.peluditos.get(3).setNroLista(5);
+			selected=0;}
 			if(mouseY>200&&mouseY<300) {
 			logica.peluditos.get(0).setNroLista(1);
 			logica.peluditos.get(1).setNroLista(3);
 			logica.peluditos.get(4).setNroLista(2);
 			logica.peluditos.get(3).setNroLista(5);
-			logica.peluditos.get(2).setNroLista(4);}
+			logica.peluditos.get(2).setNroLista(4);
+			selected=0;}
 			if(mouseY>300&&mouseY<400) {
 			logica.peluditos.get(0).setNroLista(1);
 			logica.peluditos.get(1).setNroLista(2);
 			logica.peluditos.get(4).setNroLista(3);
 			logica.peluditos.get(2).setNroLista(3);
-			logica.peluditos.get(3).setNroLista(5);}
+			logica.peluditos.get(3).setNroLista(5);
+			selected=0;}
 			if(mouseY>400&&mouseY<500) {
 			logica.peluditos.get(0).setNroLista(1);
 			logica.peluditos.get(1).setNroLista(2);
 			logica.peluditos.get(2).setNroLista(3);
 			logica.peluditos.get(3).setNroLista(5);
-			logica.peluditos.get(4).setNroLista(3);}}
+			logica.peluditos.get(4).setNroLista(3);
+			selected=0;}}
 	
+		
+		
 	}
 	
 
