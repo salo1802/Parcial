@@ -15,7 +15,7 @@ public class Main extends PApplet{
 	
 	@Override
 	public void settings() {
-		size(1200,595);
+		size(1200,695);
 		 
 		 
 	}
@@ -40,7 +40,8 @@ public class Main extends PApplet{
 	
 	@Override
 	public void draw() {
-	//prueba.draw(this);
+		background(255);
+	prueba.draw(this);
 		
 	
 	  

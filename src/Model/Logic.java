@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class Logic {
 	
@@ -26,6 +27,26 @@ public class Logic {
 	}
 	
 	public void draw(PApplet app){
+		app.noStroke();
+		app.fill(255,182,174);
+		app.rect(600, 50, 1200, 100);
+		app.fill(255);
+		app.text("ID", 150, 60);
+		app.text("Nombre", 310, 60);
+		app.text("Raza", 620, 60);
+		app.textSize(20);
+		app.text("Fecha de Nacimiento", 960, 60);
+		app.text("Edad",1150 , 60);
+		app.fill(0);
+		app.text("nota: use los botones de arriba para ordenar por atributo o arrastre a el peludito a la posición que desee.", 600, 650);
+		app.textSize(40);
+		app.stroke(255);
+		app.line(105, 0, 105, 100);
+		app.line(190, 0, 190, 100);
+		app.line(440, 0, 440, 100);
+		app.line(820, 0, 820, 100);
+		app.line(1100,0,1100, 100);
+		app.line(1195,0,1195, 100);
 		for(int i=0; i< peluditos.size();i++) {
 			Peluditos actual;
 			actual = peluditos.get(i);
@@ -194,7 +215,7 @@ public class Logic {
 					bw.write(peluditos.get(i).getId()+"    "+peluditos.get(i).getNombre()+"    "+peluditos.get(i).getRaza()+" "
 							+peluditos.get(i).getFechaNA()	+ "   "+"    "+peluditos.get(i).getEdad());
 					bw.newLine();
-					System.out.println(peluditos.get(i).getEdad());
+					
 				}
 				
 				bw.close();
