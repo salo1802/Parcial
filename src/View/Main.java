@@ -44,5 +44,12 @@ public class Main extends PApplet{
 	public void mousePressed() {
 	prueba.Buttons(mouseX, mouseY);
 	}
- }
+
+	@Override
+	public void mouseDragged() {
+	prueba.Dragged(mouseY);
+	}
+}
+
+
 

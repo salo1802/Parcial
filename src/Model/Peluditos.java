@@ -11,6 +11,7 @@ public class Peluditos implements Comparable<Peluditos>{
 	public String raza;
 	public String fechaNA;
 	public int edad;
+	public int y;
 	
 	public Peluditos(int id, String nombre, String raza, String fechaNA, int edad) {
 		this.id = id;
@@ -22,7 +23,7 @@ public class Peluditos implements Comparable<Peluditos>{
 	}
 	
 	public void pintarPeludito(PApplet app) {
-	int y = (nroLista*100)+50;
+	y = (nroLista*100)+50;
 	app.rectMode(PConstants.CENTER);
 	app.stroke(0);
 	app.strokeWeight(10);
@@ -79,6 +80,10 @@ public class Peluditos implements Comparable<Peluditos>{
 		
 	public void setFechaNA(String fechaNA) {
 		this.fechaNA = fechaNA;
+	}
+	
+	public void setY(int y) {
+		this.y = y;
 	}
 
 	@Override

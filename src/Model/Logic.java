@@ -51,6 +51,7 @@ public class Logic {
 			Peluditos actual;
 			actual = peluditos.get(i);
 			actual.pintarPeludito(app);
+				
 		}
 	}
 
@@ -130,10 +131,14 @@ public class Logic {
 			Raza r = null;
 			Fecha f = null;
 			Edad ed = null;
+			
 			n =  new Nombre();
 			r = new Raza();
 			f = new Fecha();
 			ed =  new Edad();
+			
+			
+			
 			
 			
 			//creación de los nuevos TXT
@@ -260,7 +265,11 @@ public class Logic {
 			
 			}}
 		
-			
+		public void ordenarPorlista() {
+			NroLista nl;
+			nl = new NroLista();
+			Collections.sort(peluditos, nl);
+		}
 			
  
 	
