@@ -22,7 +22,7 @@ public class Controller {
 		logica.draw(app);
 		app.noStroke();
 		app.fill(94,33,41,60);
-		if(ordenboton==true) {logica.OrdenarAtributo(button);}
+		logica.OrdenarAtributo(button);
 		switch (button) {
 		case 0:
 		app.rect(150,40 , 75, 90);

@@ -50,7 +50,7 @@ public class Peluditos implements Comparable<Peluditos>{
 	app.fill(255,182,174);
 	
 	app.circle(50, y-10, 100);
-	app.image(foto, 50, y);
+	app.image(foto, 50, y-10);
 	
 	}
 	

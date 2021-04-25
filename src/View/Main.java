@@ -29,6 +29,7 @@ public class Main extends PApplet{
 	
 		prueba = new Controller(this);
 		textAlign(LEFT,CENTER);
+		imageMode(CENTER);
 		textSize(40);
 		fill(0);
 		
@@ -45,10 +46,10 @@ public class Main extends PApplet{
 	prueba.Buttons(mouseX, mouseY);
 	}
 
-	@Override
+	/*@Override
 	public void mouseDragged() {
 	prueba.Dragged(mouseY);
-	}
+	}*/
 }
 
 
