@@ -1,7 +1,7 @@
 package View;
 
 
-import Model.Logic;
+import Controller.Controller;
 import processing.core.PApplet;
 
 public class Main extends PApplet{
@@ -11,7 +11,7 @@ public class Main extends PApplet{
 		
 	}
 	
-	Logic prueba;
+	Controller prueba;
 	
 	@Override
 	public void settings() {
@@ -27,11 +27,7 @@ public class Main extends PApplet{
 	@Override
 	public void setup() {
 	
-		prueba = new Logic();
-		prueba.crearLista(this);
-		for(int i=0;i<5;i++) {
-			prueba.OrdenarAtributo(i);
-		}
+		prueba = new Controller(this);
 		textAlign(LEFT,CENTER);
 		textSize(40);
 		fill(0);
@@ -41,16 +37,12 @@ public class Main extends PApplet{
 	@Override
 	public void draw() {
 		background(255);
-	prueba.draw(this);
-		
+	prueba.draw(this);}
+
 	
-	  
-     
-     
-
-     
-    
+	@Override
+	public void mousePressed() {
+	prueba.Buttons(mouseX, mouseY);
 	}
-
  }
 

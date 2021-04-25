@@ -15,7 +15,7 @@ import processing.core.PConstants;
 public class Logic {
 	
 	
-	public int  prueba;
+	
 	public ArrayList <Peluditos> peluditos;
 	
 	
@@ -149,7 +149,7 @@ public class Logic {
 					bw.write(peluditos.get(i).getId()+"    "+peluditos.get(i).getNombre()+"    "+peluditos.get(i).getRaza()+" "
 							+peluditos.get(i).getFechaNA()	+ "   "+"    "+peluditos.get(i).getEdad());
 					bw.newLine();
-
+				peluditos.get(i).setNroLista(i+1);
 				}
 				
 				bw.close();
@@ -172,7 +172,7 @@ public class Logic {
 				bw.write(peluditos.get(i).getId()+"    "+peluditos.get(i).getNombre()+"    "+peluditos.get(i).getRaza()+" "
 						+peluditos.get(i).getFechaNA()	+ "   "+"    "+peluditos.get(i).getEdad());
 				bw.newLine();
-
+				peluditos.get(i).setNroLista(i+1);
 			}
 			
 			bw.close();
@@ -193,7 +193,7 @@ public class Logic {
 					bw.write(peluditos.get(i).getId()+"    "+peluditos.get(i).getNombre()+"    "+peluditos.get(i).getRaza()+" "
 							+peluditos.get(i).getFechaNA()	+ "   "+"    "+peluditos.get(i).getEdad());
 					bw.newLine();
-
+					peluditos.get(i).setNroLista(i+1);
 				}
 				
 				bw.close();
@@ -215,7 +215,7 @@ public class Logic {
 					bw.write(peluditos.get(i).getId()+"    "+peluditos.get(i).getNombre()+"    "+peluditos.get(i).getRaza()+" "
 							+peluditos.get(i).getFechaNA()	+ "   "+"    "+peluditos.get(i).getEdad());
 					bw.newLine();
-					
+					peluditos.get(i).setNroLista(i+1);
 				}
 				
 				bw.close();
@@ -247,7 +247,7 @@ public class Logic {
 					bw.write(peluditos.get(i).getId()+"    "+peluditos.get(i).getNombre()+"    "+peluditos.get(i).getRaza()+" "
 							+peluditos.get(i).getFechaNA()	+ "   "+"    "+peluditos.get(i).getEdad());
 					bw.newLine();
-
+					peluditos.get(i).setNroLista(i+1);
 				}
 				
 				bw.close();
@@ -264,9 +264,7 @@ public class Logic {
 			
  
 	
-		public int getPrueba(int i) {
-			return prueba;
-		}
+		
 	}
 
 		
