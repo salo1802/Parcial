@@ -3,7 +3,7 @@ package Model;
 import processing.core.PApplet;
 import processing.core.PConstants;
 
-public class Peluditos {
+public class Peluditos implements Comparable<Peluditos>{
 
 	public int id;
 	public int nroLista;
@@ -76,21 +76,13 @@ public class Peluditos {
 	public void setNroLista(int nroLista) {
 		this.nroLista = nroLista;
 	}
-	
-	
-	public int idCompareTo(Peluditos nextPeluditos) {
+		
+	public void setFechaNA(String fechaNA) {
+		this.fechaNA = fechaNA;
+	}
+
+	@Override
+	public int compareTo(Peluditos nextPeluditos) {
 		return this.id - nextPeluditos.getId();
-	}
-	
-	public int edadCompareTo(Peluditos nextPeluditos) {
-		return this.id - nextPeluditos.getId();
-	}
-	
-	public int nombreCompare(Peluditos nextPeluditos) {
-		return this.nombre.compareTo(nextPeluditos.getNombre());
-	}
-	
-	public int razaCompare(Peluditos nextPeluditos) {
-		return this.raza.compareTo(nextPeluditos.getRaza());
 	}
 }

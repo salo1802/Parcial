@@ -29,7 +29,9 @@ public class Main extends PApplet{
 	
 		prueba = new Logic();
 		prueba.crearLista(this);
-		System.out.println(prueba.getPrueba(4));
+		for(int i=0;i<5;i++) {
+			prueba.OrdenarAtributo(i);
+		}
 		textAlign(LEFT,CENTER);
 		textSize(40);
 		fill(0);
@@ -38,7 +40,7 @@ public class Main extends PApplet{
 	
 	@Override
 	public void draw() {
-	prueba.draw(this);
+	//prueba.draw(this);
 		
 	
 	  
