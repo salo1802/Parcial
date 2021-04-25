@@ -15,7 +15,7 @@ public class Main extends PApplet{
 	
 	@Override
 	public void settings() {
-		size(400,400);
+		size(1200,595);
 		 
 		 
 	}
@@ -29,13 +29,17 @@ public class Main extends PApplet{
 	
 		prueba = new Logic();
 		prueba.crearLista(this);
-		System.out.println(prueba.getPrueba());
-		 
+		System.out.println(prueba.getPrueba(4));
+		textAlign(LEFT,CENTER);
+		textSize(40);
+		fill(0);
+		
 	}
 	
 	@Override
 	public void draw() {
-	
+	prueba.draw(this);
+		
 	
 	  
      

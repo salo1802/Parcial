@@ -1,21 +1,35 @@
 package Model;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import processing.core.PApplet;
 
 public class Logic {
 	
 	
-	public int[]  prueba;
+	public int  prueba;
 	public ArrayList <Peluditos> peluditos;
 	
 	public Logic() {
 	
-		peluditos = new ArrayList<>();
+		peluditos = new ArrayList<Peluditos>();
 		
 		
+	}
+	
+	public void draw(PApplet app){
+		for(int i=0; i< peluditos.size();i++) {
+			Peluditos actual;
+			actual = peluditos.get(i);
+			actual.pintarPeludito(app);
+		}
 	}
 
 	
@@ -50,6 +64,7 @@ public class Logic {
 		//crear los objetos de peludito
 			
 		for (int i = 0; i < 5; i++) {
+			int index = i;
 			int id = 0;
 			int edad = 0;
 			int dia = 0;
@@ -60,22 +75,19 @@ public class Logic {
 			String nombre = null; 
 			String raza = null;
 			Peluditos actual;
-		for (int j = 0; j < palabras1.size();j++) {
-			int index = j;
-			if(j%2 == 0) {
-				id = Integer.parseInt(palabras1.get(j));
-				nombre = palabras1.get(index+1);}}
-		for (int j = 0; j < palabras2.size();j++) {
-			int index = j;
-			if(j%3 == 0) {
-				raza = palabras2.get(index+1);
-				fecha = palabras2.get(index+2);
+		
+			id = Integer.parseInt(palabras1.get(index*2));
+				nombre = palabras1.get((index*2)+1);
+		
+				raza = palabras2.get(index*3+1);
+				fecha = palabras2.get(index*3+2);
 				nrosFecha = PApplet.parseInt(PApplet.split(fecha, "-"));
 			dia=nrosFecha[0];
 			mes=nrosFecha[1];
-			año=nrosFecha[2];}}
-		if(mes>=app.month()) {
-			if(dia>=app.day()) {
+			año=nrosFecha[2];
+			
+		if(mes<=app.month()) {
+			if(dia<=app.day()) {
 			edad =	app.year()-año;
 			}} else { edad = app.year()-(año+1);}
 		actual = new Peluditos(id, nombre, raza, fecha,edad);
@@ -83,6 +95,24 @@ public class Logic {
 		}	
 		
 		//creación de los nuevos TXT
+		
+		//por ID
+		File file = new File ("./data/exports/ordenPorId.txt");
+		try {
+			FileWriter fw = new FileWriter(file);
+			BufferedWriter bw = new BufferedWriter(fw);
+			for(int i=0;i<peluditos.size();i++) {
+				bw.write(peluditos.get(i).getId()+"    "+peluditos.get(i).getNombre()+"    "+peluditos.get(i).getRaza()+" "
+						+peluditos.get(i).getFechaNA()	+ "   "+"    "+peluditos.get(i).getEdad());
+				bw.newLine();
+
+			}
+			
+			bw.close();
+		}
+		catch(IOException e) {
+			
+		}
 		
 		
 		
@@ -98,8 +128,8 @@ public class Logic {
 			
  
 	
-		public ArrayList<Peluditos> getPrueba() {
-			return peluditos;
+		public int getPrueba(int i) {
+			return prueba;
 		}
 	}
 

@@ -1,5 +1,8 @@
 package Model;
 
+import processing.core.PApplet;
+import processing.core.PConstants;
+
 public class Peluditos {
 
 	public int id;
@@ -16,6 +19,34 @@ public class Peluditos {
 		this.raza = raza;
 		this.fechaNA =  fechaNA;
 		this.edad = edad;
+	}
+	
+	public void pintarPeludito(PApplet app) {
+	int y = (nroLista*100)+50;
+	app.rectMode(PConstants.CENTER);
+	app.stroke(0);
+	app.strokeWeight(10);
+	app.fill(255);
+	app.rect(700, y-10, 1400, 100);
+	app.rect(70, y-10, 70, 100);
+	app.line(190, y-60, 190, y+40);
+	app.line(440, y-60, 440, y+40);
+	app.line(820, y-60, 820, y+40);
+	app.line(1100, y-60,1100, y+40);
+	app.line(1195, y-60,1195, y+40);
+	app.fill(0);
+	app.textAlign(PConstants.CENTER);
+	app.text(""+id, 150, y);
+	app.textAlign(PConstants.LEFT);
+	app.text(nombre, 200, y);
+	app.text(raza, 450, y);
+	app.textAlign(PConstants.CENTER);
+	app.text(fechaNA, 950, y);	
+	app.text(""+edad, 1150, y);
+	app.fill(255,182,174);
+	
+	app.circle(50, y-10, 100);
+	
 	}
 	
 	public int getEdad() {
@@ -55,5 +86,11 @@ public class Peluditos {
 		return this.id - nextPeluditos.getId();
 	}
 	
+	public int nombreCompare(Peluditos nextPeluditos) {
+		return this.nombre.compareTo(nextPeluditos.getNombre());
+	}
 	
+	public int razaCompare(Peluditos nextPeluditos) {
+		return this.raza.compareTo(nextPeluditos.getRaza());
+	}
 }
